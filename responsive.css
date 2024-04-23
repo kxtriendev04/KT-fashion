@@ -17,11 +17,26 @@
     #header {
         justify-content: space-between;
     }
+    .header__logo {
+        font-size: 1.8rem;
+    }
     .nav__aside__list {
         margin: 40px 20px;
     }
+    .selection__heading {
+        font-size: 22px;
+    }
     .content__section__nav {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .header__cart {
+        width: 85vw;
+    }
+    .footerlist {
+        display: none;
+    }
+    .content__section__nav {
+        margin: 0 5px;
     }
 }
 

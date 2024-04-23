@@ -11,27 +11,30 @@ window.onscroll = function() {scrollFunction()};
             }
         }
 
+const overLay = document.querySelector('.overlay')
 
-
-function cartHandlerOpen() {
-    document.querySelector(".header__cart").style.display = "block";
-    document.querySelector(".overlay").style.display = "block";
+const cartIcon = document.querySelector('#icon__cart')
+const cartContainer = document.querySelector('.header__cart')
+cartIcon.addEventListener('click', () => {
+    cartContainer.classList.add('active')
+    document.querySelector('.header__cart__close').style.display = 'block'
+    
+})
+function removeCart () {
+    console.log(cartContainer)
+    cartContainer.classList.remove('active')
+    document.querySelector('.header__cart__close').style.display = 'none'
 }
 
-function cartHandlerClose() {
-    document.querySelector(".header__cart").style.display = "none";
-    document.querySelector(".overlay").style.display = "none";
-    alert(123)
 
+const navAsideItem = document.querySelector('.nav__aside')
+function showNavaside () {
+    navAsideItem.classList.add('active')
+    document.querySelector('.nav__aside__close').style.display = 'block'
 }
 
-function showNavaside (){
-    document.querySelector(".overlay").style.display = "block";
-    document.querySelector(".nav__aside").style.display = "block";
-
-}
-
-function showiTemInNavaside () {
-    document.querySelector(".nav__aside__select__list").style.display = "block";
+function removeNavAside () {
+    navAsideItem.classList.remove('active')
+    document.querySelector('.nav__aside__close').style.display = 'none'
 
 }
