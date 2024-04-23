@@ -1,0 +1,30 @@
+/* TABLET AND MOBILE*/
+@media (max-width: 1023px) {
+
+    #nav, .nav__pc {
+        display: none;
+    }
+    .icon__search__header {
+        display: none;
+    }
+    .icon__bars {
+        display: block;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 740px) {
+    #header {
+        justify-content: space-between;
+    }
+    .nav__aside__list {
+        margin: 40px 20px;
+    }
+}
+
+
+/* TABLET */
+@media (max-width: 1023px) and (min-width: 740px){
+
+}
+

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./grid.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./responsive.css">
+
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div id="header">
+        <div class="header__logo">Fashion</div>
+        <div class="header__wrap">
+            <div href="" class="header__wrap__item" id="icon__cart" onclick = cartHandlerOpen()>
+                <svg class="header__wrap__icon" fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>      
+                <div class="header__cart">
+                    <div class="header__cart__wrap">
+                        <h3 class="header__cart__title">Giỏ hàng</h3>
+                        <ul class="header__cart__product">
+                            <li class="header__cart__item">ITEM
+                            </li>
+                            <div class="cart__divided"></div>
+                            <li class="header__cart__item">ITEM
+                            </li>
+                            <div class="cart__divided"></div>
+                            <li class="header__cart__item">ITEM
+                            </li>
+                            <div class="cart__divided"></div>
+                            <li class="header__cart__item">ITEM
+                            </li>
+                            
+                            
+                        </ul>
+                        <div class="header__cart__sum_money">
+                            <h3 class="header__cart__sum">TỔNG TIỀN:</h3>
+                            <h3 class="header__cart__price">689.999</h3>
+                        </div>
+                        <button class="header__cart__btn">THANH TOÁN</button>
+
+                    </div>
+                    <div class="header__cart__close" onclick = cartHandlerClose()>      
+                        <svg fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="header__wrap__item">
+                <svg class="header__wrap__icon" fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+
+            </a>
+            <a href="" class="header__wrap__item icon__search__header">
+                <svg class="header__wrap__icon" fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            </a>
+            <div class="header__wrap__item icon__bars"  onclick = showNavaside()>
+                
+                <svg fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                <nav class="nav__aside">
+                    <ul class="nav__aside__list">
+                        <h3 class="nav__aside__title">MENU</h3>
+                        <li class="nav__aside__item">
+                            <p class="nav__aside__item__text">Trang chủ</p>
+                           
+                        </li>
+                        <li class="nav__aside__item" onclick = showiTemInNavaside()>
+                            <p class="nav__aside__item__text">Sản phẩm</p>
+                           
+                            <ul class="nav__aside__select__list">
+                                <li class="nav__aside__select">Sơ mi</li>
+                                <li class="nav__aside__select">Quần dài</li>
+                                <li class="nav__aside__select">Áo phông</li>
+                                <li class="nav__aside__select">Áo khoác</li>
+                                <li class="nav__aside__select">Phụ kiện</li>
+                            </ul>
+                        </li>
+                        <li class="nav__aside__item">
+                            <p class="nav__aside__item__text">Liên hệ</p>
+                           
+                        </li>
+                    </ul>
+                    <div class="nav__aside__close">      
+                        <svg fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <!-- Account -->
+    <!-- <form action="" method="POST" class="form" id="form-1">
+        <h2 class="heading">Welcome Back</h2>
+        <div class="spacer"></div>
+
+        <div class="login-with-google">
+          <img class="login--img" src="https://steelbluemedia.com/wp-content/uploads/2019/06/new-google-favicon-512.png" alt="">
+          <p class="login--title">Log in with Google</p>
+        </div>
+
+        <p class="divider">-----------------------------------or login with email-----------------------------------</p>
+    
+    
+        <div class="form-group">
+          <input id="email" name="email" rules = "required|email" type="text" placeholder="Your email" class="form-control">
+          <span class="form-message"></span>
+        </div>
+    
+        <div class="form-group">
+          <input id="password" name="password" rules = "required|min:6" type="password" placeholder="Your password" class="form-control">
+          <span class="form-message"></span>
+        </div>
+
+        <div class="password--support">
+          <div class="remain--login">
+              <input type="checkbox">
+              <span class="remain--login--title" >Keep me logged in</span>
+          </div>
+          <a href="" class="forgot--password">Forgot password</a>
+        </div>
+    
+        <button class="form-submit">Log in</button>
+
+        <div class="sign--up">
+          <p class="sign--up--title">Don't have an account yet?</p>
+          <a href="" class="sign--up--link">Sign up</a>
+        </div>
+      </form> -->
+
+    <div id="subheader">
+        <div class="header__logo">Fashion</div>
+        
+        <nav class="nav__pc">
+            <div class="nav__item">
+                <a href="" class="nav__link">Trang chủ</a>
+            </div>
+            <div class="nav__item">
+                <a class="nav__link">Sản phẩm</a>
+                <ul class="nav__list">
+                    <li><a href="#somi" class="nav__list__item">Sơ mi</a></li>
+                    <div class="nav__divide"></div> 
+                    <li><a href="#quandai" class="nav__list__item">Quần dài</a></li>
+                    <div class="nav__divide"></div> 
+                    <li><a href="#aophong" class="nav__list__item">Áo phông</a></li> 
+                    <div class="nav__divide"></div> 
+                    <li><a href="#aokhoac" class="nav__list__item">Áo khoác</a></li> 
+                    <div class="nav__divide"></div> 
+                    <li><a href="#phukien" class="nav__list__item">Phụ kiện</a></li> 
+                </ul>
+            </div>
+            <div class="nav__item">
+                <a href="" class="nav__link">Liên hệ</a>
+            </div>
+            <div class="nav__item">
+                <a href="" class="nav__link">Chính sách</a>
+                <ul class="nav__list">
+            </div>
+        </nav>
+        <div class="header__wrap">
+            <div href="" class="header__wrap__item " onclick = cartHandlerOpen()>
+                <svg class="header__wrap__icon" fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>      
+
+            </div>
+            <a href="" class="header__wrap__item">
+                <svg class="header__wrap__icon" fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+
+            </a>
+            <a href="" class="header__wrap__item icon__search__header">
+                <svg class="header__wrap__icon" fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            </a>
+            <div class="header__wrap__item icon__bars"  onclick = showNavaside()>
+                
+                <svg fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                <nav class="nav__aside">
+                    <ul class="nav__aside__list">
+                        <h3 class="nav__aside__title">MENU</h3>
+                        <li class="nav__aside__item">
+                            <p class="nav__aside__item__text">Trang chủ</p>
+                           
+                        </li>
+                        <li class="nav__aside__item" onclick = showiTemInNavaside()>
+                            <p class="nav__aside__item__text">Sản phẩm</p>
+                           
+                            <ul class="nav__aside__select__list">
+                                <li class="nav__aside__select">Sơ mi</li>
+                                <li class="nav__aside__select">Quần dài</li>
+                                <li class="nav__aside__select">Áo phông</li>
+                                <li class="nav__aside__select">Áo khoác</li>
+                                <li class="nav__aside__select">Phụ kiện</li>
+                            </ul>
+                        </li>
+                        <li class="nav__aside__item">
+                            <p class="nav__aside__item__text">Liên hệ</p>
+                           
+                        </li>
+                    </ul>
+                    <div class="nav__aside__close" onclick = closeNavAside()>      
+                        <svg fill = "black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+                    </div>
+                </nav>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="nav">
+        <nav class="nav__pc">
+            <div class="nav__item">
+                <a href="" class="nav__link">Trang chủ</a>
+            </div>
+            <div class="nav__item">
+                <a class="nav__link">Sản phẩm</a>
+                <ul class="nav__list">
+                    <li><a href="#somi" class="nav__list__item">Sơ mi</a></li>
+                    <div class="nav__divide"></div> 
+                    <li><a href="#quandai" class="nav__list__item">Quần dài</a></li>
+                    <div class="nav__divide"></div> 
+                    <li><a href="#aophong" class="nav__list__item">Áo phông</a></li> 
+                    <div class="nav__divide"></div> 
+                    <li><a href="#aokhoac" class="nav__list__item">Áo khoác</a></li> 
+                    <div class="nav__divide"></div> 
+                    <li><a href="#phukien" class="nav__list__item">Phụ kiện</a></li> 
+                </ul>
+            </div>
+            <div class="nav__item">
+                <a href="" class="nav__link">Liên hệ</a>
+            </div>
+            <div class="nav__item">
+                <a href="" class="nav__link">Chính sách</a>
+                <ul class="nav__list">
+            </div>
+        </nav>
+    </div>
+    <div id="content">
+        <div class="slide__img">
+            <img src="./assets/img/picture (3).jpg" alt="">
+        </div>
+        <section id="somi" class="content__section grid wide">
+            <h3 class="selection__heading">Sơ Mi</h3>
+            <ul class="content__section__nav">
+                <li class="content__section__nav__item content__section__nav__selected">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+            </ul>
+            <div class="content__section__wrap row">
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+
+            </div>
+        </section>
+        <section id="quandai" class="content__section grid wide">
+            <h3 class="selection__heading">Quần dài</h3>
+            <ul class="content__section__nav">
+                <li class="content__section__nav__item content__section__nav__selected">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+            </ul>
+            <div class="content__section__wrap row">
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+
+            </div>
+        </section>
+        <section id="aophong" class="content__section grid wide">
+            <h3 class="selection__heading">Áo Phông</h3>
+            <ul class="content__section__nav">
+                <li class="content__section__nav__item content__section__nav__selected">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+            </ul>
+            <div class="content__section__wrap row">
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+
+            </div>
+        </section>
+        <section id="aokhoac" class="content__section grid wide">
+            <h3 class="selection__heading">Áo Khoác</h3>
+            <ul class="content__section__nav">
+                <li class="content__section__nav__item content__section__nav__selected">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+            </ul>
+            <div class="content__section__wrap row">
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+
+            </div>
+        </section>
+        <section id="phukien" class="content__section grid wide">
+            <h3 class="selection__heading">Phụ Kiện</h3>
+            <ul class="content__section__nav">
+                <li class="content__section__nav__item content__section__nav__selected">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+                <li class="content__section__nav__item">Áo ngắn tay</li>
+            </ul>
+            <div class="content__section__wrap row">
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+                <div class="content__section__item col l-3 m-4 c-6">
+                    <div href="">ITEM</div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div id="footer" class="grid wide">
+        <div class="footer__wrap row">
+            <ul class="footer__list col l-3 m-4 c-6">
+                <h3 class="footer__title">Chính sách</h3>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+            </ul><ul class="footer__list col l-3 m-4 c-6">
+                <h3 class="footer__title">Chính sách</h3>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+            </ul><ul class="footer__list col l-3 m-4 c-6">
+                <h3 class="footer__title">Liên hệ</h3>
+                
+            </ul><ul class="footer__list col l-3 m-4 c-6">
+                <h3 class="footer__title">Chính sách</h3>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+                <li class="footer__option">- Hướng dẫn sử dụng</li>
+            </ul>
+            
+        </div>
+
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
