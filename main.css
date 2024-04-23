@@ -466,6 +466,7 @@ svg {
 
 .slide__img img{
     margin-top: 5px;
+    width: 100vw;
 }
 
 .content__section {

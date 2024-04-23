@@ -20,6 +20,9 @@
     .nav__aside__list {
         margin: 40px 20px;
     }
+    .content__section__nav {
+        font-size: 1.5rem;
+    }
 }
 
 
