@@ -10,6 +10,9 @@
     .icon__bars {
         display: block;
     }
+    .footerlist__icons, .footer__connection {
+        display: none;
+    }
 }
 
 /* MOBILE */
@@ -19,6 +22,9 @@
     }
     .header__logo {
         font-size: 1.8rem;
+    }
+    .nav__aside {
+        width: 75vw;
     }
     .nav__aside__list {
         margin: 40px 20px;
@@ -32,17 +38,31 @@
     .header__cart {
         width: 85vw;
     }
-    .footerlist {
+    .footerlist__link {
         display: none;
     }
     .content__section__nav {
         margin: 0 5px;
     }
+    .account__form {
+        width: 100%;
+        border-radius: 0;
+        transform: none;
+        top: 55px;
+        right: 0;
+        left: 0;
+    }
+
 }
 
 
 /* TABLET */
 @media (max-width: 1023px) and (min-width: 740px){
-
+    .account__form {
+        width: 60%;
+    }
+    .header__search {
+        width: 60%;
+    }
 }
 
